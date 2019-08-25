@@ -7,12 +7,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-//        plugin = {
+        plugin = {
 //                "json:target/cucumber.json",
-//                "html:target/default-cucumber-reports",
+                "html:target/default-cucumber-reports",
 //                "rerun:target/rerun.txt"
-//        },
-        tags = {"@negative"},
+        },
+        tags = {"@driver"},
         features = {"src/test/resources/features" //to specify where are the features
         },
         //feature contains scenarios
@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
         glue = {"com/vytrack/step_definitions"},
         //dry run - to generate step definitions automatically
         //you will see them in the console output
-        dryRun = false
+        dryRun = true
 
 )
 public class CukesRunner{
