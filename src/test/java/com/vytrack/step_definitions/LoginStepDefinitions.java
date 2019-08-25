@@ -5,6 +5,7 @@ import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.Pages;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 public class LoginStepDefinitions {
@@ -43,6 +44,13 @@ public class LoginStepDefinitions {
         String password = ConfigurationReader.getProperty("driverpassword");
         pages.loginPage().login(username, password);
     }
+
+    @When("user logs in as a {string}")
+    public void user_logs_in_as_a(String role) {
+        pages.loginPage().login(role);
+    }
+
+
 
     //this is temporary solution until we start using hooks
     @Then("user quits")
